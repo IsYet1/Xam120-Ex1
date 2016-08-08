@@ -3,7 +3,7 @@
 public class MainPage : ContentPage
 {
     Entry _enteredNumber;
-    string _translatedNumber;
+    Label _translatedNumber;
     Button _translateBtn;
     Button _callBtn;
 
@@ -46,6 +46,10 @@ public class MainPage : ContentPage
             }
         );
 
+        panel.Children.Add(
+            _translatedNumber = new Label { Text="Translated number here"}    
+        );
+
         _translateBtn.Clicked += OnTranslate;
 
         this.Content = panel;
@@ -55,9 +59,9 @@ public class MainPage : ContentPage
     private void OnTranslate(object sender, System.EventArgs e)
     {
         var translateThis = _enteredNumber.Text;
-        _translatedNumber = Core.PhonewordTranslator.ToNumber(translateThis);
+        _translatedNumber.Text = Core.PhonewordTranslator.ToNumber(translateThis);
 
-        if (!string.IsNullOrEmpty(_translatedNumber))
+        if (!string.IsNullOrEmpty(_translatedNumber.Text))
         {
             //TODO
         }
