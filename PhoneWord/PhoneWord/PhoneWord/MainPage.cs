@@ -45,7 +45,15 @@ public class MainPage : ContentPage
             }
         );
 
+        _translateBtn.Clicked += OnTranslate;
+
         this.Content = panel;
 
+    }
+
+    private void OnTranslate(object sender, System.EventArgs e)
+    {
+        var translateThis = _entry.Text;
+        var tranlated = Core.PhonewordTranslator.ToNumber(translateThis);
     }
 }
