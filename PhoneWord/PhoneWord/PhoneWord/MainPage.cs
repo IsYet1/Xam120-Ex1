@@ -2,7 +2,8 @@
 
 public class MainPage : ContentPage
 {
-    Entry _entry;
+    Entry _enteredNumber;
+    string _translatedNumber;
     Button _translateBtn;
     Button _callBtn;
 
@@ -27,7 +28,7 @@ public class MainPage : ContentPage
         );
 
         panel.Children.Add(
-            _entry = new Entry { Text = "1-855-Xamarin"}
+            _enteredNumber = new Entry { Text = "1-855-Xamarin"}
         );
 
         panel.Children.Add(
@@ -53,7 +54,16 @@ public class MainPage : ContentPage
 
     private void OnTranslate(object sender, System.EventArgs e)
     {
-        var translateThis = _entry.Text;
-        var tranlated = Core.PhonewordTranslator.ToNumber(translateThis);
+        var translateThis = _enteredNumber.Text;
+        _translatedNumber = Core.PhonewordTranslator.ToNumber(translateThis);
+
+        if (!string.IsNullOrEmpty(_translatedNumber))
+        {
+            //TODO
+        }
+        else
+        {
+            //TODO
+        }
     }
 }
