@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using PhoneWord;
+using Xamarin.Forms;
 
 public class MainPage : ContentPage
 {
@@ -58,6 +59,15 @@ public class MainPage : ContentPage
         var doCall = await this.DisplayAlert(
             "Dial a Number", $"Would you like to call {_translatedNumber}?", "Yes", "No"
             );
+        if (doCall)
+        {
+            var dialer = DependencyService.Get<IDialer>();
+            if (dialer != null)
+            {
+                await dialer.DialAsync(_translatedNumber);
+
+            }
+        }
     }
 
     private void OnTranslate(object sender, System.EventArgs e)
