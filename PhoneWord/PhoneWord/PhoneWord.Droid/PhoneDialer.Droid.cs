@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Android.Telephony;
 using Xamarin.Forms;
 using Phoneword.Android;
+using PhoneWord;
 
 using Uri = Android.Net.Uri;
 

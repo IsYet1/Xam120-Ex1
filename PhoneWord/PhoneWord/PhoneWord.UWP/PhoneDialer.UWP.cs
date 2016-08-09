@@ -2,6 +2,7 @@
 using Windows.Foundation.Metadata;
 using Phoneword.UWP;
 using Xamarin.Forms;
+using PhoneWord;
 
 [assembly: Dependency(typeof(PhoneDialer))]
 

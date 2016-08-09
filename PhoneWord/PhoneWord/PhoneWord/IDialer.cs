@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PhoneWord
 {
-    interface IDialer
+    public interface IDialer
     {
-        bool DialAsync(string number);
+        Task<bool> DialAsync(string number);
     }
 }
