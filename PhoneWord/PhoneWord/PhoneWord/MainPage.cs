@@ -47,9 +47,17 @@ public class MainPage : ContentPage
         );
 
         _translateBtn.Clicked += OnTranslate;
+        _callBtn.Clicked += OnCall;
 
         this.Content = panel;
 
+    }
+
+    private async void OnCall(object sender, System.EventArgs e)
+    {
+        var doCall = await this.DisplayAlert(
+            "Dial a Number", $"Would you like to call {_translatedNumber}?", "Yes", "No"
+            );
     }
 
     private void OnTranslate(object sender, System.EventArgs e)
