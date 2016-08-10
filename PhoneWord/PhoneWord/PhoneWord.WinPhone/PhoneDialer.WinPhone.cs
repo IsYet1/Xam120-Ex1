@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Phoneword.WinPhone81;
 using Xamarin.Forms;
+using PhoneWord;
 
 [assembly: Dependency(typeof(PhoneDialer))]
 
